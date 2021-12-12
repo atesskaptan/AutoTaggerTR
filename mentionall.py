@@ -48,7 +48,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('➕ Beni Grubuna Ekle ➕', 'http://t.me/autotagger_bot?startgroup=a')
+                         Button.url('➕ Beni Grubuna Ekle ➕', 'http://t.me/persontagger_bot?startgroup=a')
                       ]
                     ),
                     link_preview=False
