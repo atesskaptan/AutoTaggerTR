@@ -26,7 +26,7 @@ emj = ['😇','🥰','😎','🤩','😍','👾','🤡','🥳','😻','😼','�
 cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil ✨', 'Gül 🌹', 'Ayıcık 🐻', 'Mutlu pandam 🐼', 'Ay parem ✨', 'Ballı lokmam ✨', 'Bebişim 🥰', 'Lale 🌷', 'Zambak ⚜', 'Nergis ✨', 'Sümbül ☘️', 'Nilüfer ☘️', 'Menekşe ⚜️', 'Lavanta ✨', 'Gül pare ✨', 'Reyhan 🌷', 'Kaktüs ⚜️', 'Böğürtlen ☘️', 'Orkide ☘️', 'Manolya ✨', 'Ayçiçeği ✨', 'Tweety ⚜️', 'Star ✨', 'Yonca 🍀', 'Ateş böceği ✨',]
 #  güzel isimler...!!!
 
-@client.on(events.NewMessage(pattern='^(?i)/cancel'))
+@client.on(events.NewMessage(pattern='^(?i)/stop'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -236,22 +236,11 @@ async def nick(event):
       if event.chat_id not in anlik_calisan:
         await event.respond("İşlem Başarılı Bir Şekilde Durduruldu ❌")
         return
-      if usrnum == 5:
+      if usrnum == 7:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
-
-@client.on(events.NewMessage(pattern="^/stop$"))
-async def cancel_spam(event):
-  if not event.chat_id in spam_chats:
-    return await event.respond('__Devam eden bir süreç yok...__')
-  else:
-    try:
-      spam_chats.remove(event.chat_id)
-    except:
-      pass
-    return await event.respond('__Etiket işlemi durduruldu.__')
 
 print(">> Bot çalıyor merak etme 🚀 @tht_herlock bilgi alabilirsin <<")
 client.run_until_disconnected()
