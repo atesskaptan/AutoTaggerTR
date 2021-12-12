@@ -34,7 +34,7 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**AutoTagger🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
+  await event.reply("**PersonTagger🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
                     buttons=(
                       [
                          Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/persontagger_bot?startgroup=a')
@@ -48,7 +48,7 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/bilgi$"))
 async def help(event):
-  helptext = "**AutoTagger🇹🇷 Bot'un Yardım Menüsü**\n\nKomut: /utag \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. /etag  \n emoji ile etiketleme. \n`Örnek: /utag Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyecek."
+  helptext = "**PersonTagger🇹🇷 Bot'un Yardım Menüsü**\n\nKomut: /utag \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. /etag  \n emoji ile etiketleme. \n`Örnek: /utag Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyecek."
   await event.reply(helptext,
                     buttons=(
                       [
@@ -241,6 +241,17 @@ async def nick(event):
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
+
+@client.on(events.NewMessage(pattern="^/stop$"))
+async def cancel_spam(event):
+  if not event.chat_id in spam_chats:
+    return await event.respond('__Devam eden bir süreç yok...__')
+  else:
+    try:
+      spam_chats.remove(event.chat_id)
+    except:
+      pass
+    return await event.respond('__Etiket işlemi durduruldu.__')
 
 print(">> Bot çalıyor merak etme 🚀 @tht_herlock bilgi alabilirsin <<")
 client.run_until_disconnected()
