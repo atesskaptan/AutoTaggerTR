@@ -36,7 +36,7 @@ async def cancel(event):
 async def start(event):
   await event.reply("Ben @PersonTaggerBot, Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.\nDaha fazla bilgi için /help tıklayın.",
                     buttons=(
-                      [Button.url('➕ Beni Grubuna Ekle ➕ ', 'http://t.me/persontagger_bot?startgroup=a')],
+                      [Button.url('➕ Beni Grubuna Ekle ➕ ', 'https://t.me/persontaggerbot?startgroup=a')],
                       [Button.url('📣 ResmiKanal', 'https://t.me/persontagger'),
                       Button.url('🔥 Sahibim', 'https://t.me/dunyadanatlasa')]
                     ),
@@ -48,7 +48,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('➕ Beni Grubuna Ekle ➕', 'http://t.me/persontagger_bot?startgroup=a')
+                         Button.url('➕ Beni Grubuna Ekle ➕', 'https://t.me/persontaggerbot?startgroup=a')
                       ]
                     ),
                     link_preview=False
