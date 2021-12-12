@@ -34,11 +34,11 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**PersonTagger🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
+  await event.reply("Ben @PersonTaggerBot, Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.\nDaha fazla bilgi için /help tıklayın.",
                     buttons=(
-                      [Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/persontagger_bot?startgroup=a')],
-                      [Button.url('📣 Resmi Kanal', 'https://t.me/persontagger')],
-                      [Button.url('🔥 Sahibim', 'https://t.me/dunyadanatlasa')]
+                      [Button.url('➕ Beni Grubuna Ekle ➕ ', 'http://t.me/persontagger_bot?startgroup=a')],
+                      [Button.url('📣 ResmiKanal', 'https://t.me/persontagger'),
+                      Button.url('🔥 Sahibim', 'https://t.me/dunyadanatlasa')]
                     ),
                     link_preview=False
                    )
@@ -48,7 +48,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('➕ BENİ GRUBA EKLE ➕', 'http://t.me/autotagger_bot?startgroup=a')
+                         Button.url('➕ Beni Grubuna Ekle ➕', 'http://t.me/autotagger_bot?startgroup=a')
                       ]
                     ),
                     link_preview=False
