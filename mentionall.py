@@ -36,13 +36,9 @@ async def cancel(event):
 async def start(event):
   await event.reply("**PersonTagger🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
                     buttons=(
-                      [
-                         Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/persontagger_bot?startgroup=a')
-                      ],
-                      [
-                         Button.url('📣 Kanal', 'https://t.me/persontagger'),
-                         Button.url('👮 Sahib', 'https://t.me/dunyadanatlasa')
-                      ]
+                      [Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/persontagger_bot?startgroup=a')],
+                      [Button.url('📣 Resmi Kanal', 'https://t.me/persontagger')],
+                      [Button.url('🔥 Sahib', 'https://t.me/dunyadanatlasa')]
                     ),
                     link_preview=False
                    )
@@ -55,8 +51,8 @@ async def help(event):
                          Button.url('➕ BENİ GRUBA EKLE ➕', 'http://t.me/autotagger_bot?startgroup=a')
                       ],
                       [
-                         Button.url('📣 Kanal', 'https://t.me/persontagger'),
-                         Button.url('👮 Sahib', 'https://t.me/dunyadanatlasa')
+                         Button.url('📣 Kanal', 'https://t.me/persontagger')],
+                      [  Button.url('🔥 Sahib', 'https://t.me/dunyadanatlasa')
                       ]
                     ),
                     link_preview=False
