@@ -38,7 +38,7 @@ async def start(event):
                     buttons=(
                       [Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/persontagger_bot?startgroup=a')],
                       [Button.url('📣 Resmi Kanal', 'https://t.me/persontagger')],
-                      [Button.url('🔥 Sahib', 'https://t.me/dunyadanatlasa')]
+                      [Button.url('🔥 Sahibim', 'https://t.me/dunyadanatlasa')]
                     ),
                     link_preview=False
                    )
@@ -49,10 +49,6 @@ async def help(event):
                     buttons=(
                       [
                          Button.url('➕ BENİ GRUBA EKLE ➕', 'http://t.me/autotagger_bot?startgroup=a')
-                      ],
-                      [
-                         Button.url('📣 Kanal', 'https://t.me/persontagger')],
-                      [  Button.url('🔥 Sahib', 'https://t.me/dunyadanatlasa')
                       ]
                     ),
                     link_preview=False
