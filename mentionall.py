@@ -44,7 +44,7 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = " : @PersonTaggerBot Yardım Menüsü \n\nKomut: /utag\n__Grubunuzdaki kullanıcıları etiketlemek için kullanabilirsiniz.__\nÖrnek: /mentionall Günaydın!\n\nKonut: /etag\nGrubunuzdaki kullanıcıları emoji ile etiketler.\n\nKomut: /itag\nGrubunuzdaki kullanıcıları güzel sözler ile etiketler.
+  helptext = "@PersonTaggerBot Yardım Menüsü\n\nKomut: /utag\n__Grubunuzdaki kullanıcıları etiketlemek için kullanabilirsiniz.__\nÖrnek: /mentionall Günaydın!\n\nKonut: /etag\nGrubunuzdaki kullanıcıları emoji ile etiketler.\n\nKomut: /itag\nGrubunuzdaki kullanıcıları güzel sözler ile etiketler.
 \n\nKomut: /stop\n__Devam eden etiket işlemini durdurur__."
   await event.reply(helptext,
                     buttons=(
