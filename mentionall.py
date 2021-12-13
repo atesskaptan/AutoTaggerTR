@@ -30,7 +30,8 @@ cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil �
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
-
+  if event.is_private:
+    return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
