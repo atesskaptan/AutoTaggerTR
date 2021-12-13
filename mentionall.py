@@ -29,9 +29,8 @@ cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil �
 @client.on(events.NewMessage(pattern='^(?i)/stop'))
 async def cancel(event):
   global anlik_calisan
-  anlik_calisan.remove
-  if event.is_private:
-    return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
+  anlik_calisan.remove(event.chat_id)
+
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   await event.reply("Ben @PersonTaggerBot, Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.\nDaha fazla bilgi için /help tıklayın.",
