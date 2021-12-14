@@ -34,16 +34,6 @@ async def cancel(event):
   else:
     try:
       anlik_calisan.remove(event.chat_id)
-    except:
-      pass
-    return await event.respond('__Stopped.__')
-
-
-  admins = []
-  async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
-    admins.append(admin.id)
-  if not event.sender_id in admins:
-    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
@@ -55,6 +45,7 @@ async def start(event):
                     ),
                     link_preview=False
                    )
+
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
   helptext = "@PersonTaggerBot Yardım Menüsü\n\nKomut: /utag\nGrubunuzdaki kullanıcıları etiketlemek için kullanabilirsiniz.\nÖrnek: /utag Günaydın!\n\nKonut: /etag\nGrubunuzdaki kullanıcıları emoji ile etiketler.\n\nKomut: /itag\nGrubunuzdaki kullanıcıları güzel sözler ile etiketler.\n\nKomut: /stop\nDevam eden etiket işlemini durdurur."
