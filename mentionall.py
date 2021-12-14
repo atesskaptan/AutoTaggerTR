@@ -35,6 +35,7 @@ async def cancel(event):
     try:
       anlik_calisan.remove(event.chat_id)
 
+  
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   await event.reply("Ben @PersonTaggerBot, Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.\nDaha fazla bilgi için /help tıklayın.",
