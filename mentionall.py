@@ -29,9 +29,15 @@ cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil �
 @client.on(events.NewMessage(pattern='^(?i)/stop'))
 async def cancel(event):
   global anlik_calisan
-  anlik_calisan.remove(event.chat_id)
   if event.is_private:
     return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
+  else:
+    try:
+      anlik_calisan.remove(event.chat_id)
+    except:
+      pass
+    return await event.respond('__Stopped.__')
+
 
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
