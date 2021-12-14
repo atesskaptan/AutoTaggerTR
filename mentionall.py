@@ -30,14 +30,14 @@ cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil �
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
-    if not event.chat_id in anlik_calisan:
-    return await event.respond('__There is no proccess on going...__')
-  else:
-    try:
-      anlik_calisan.remove(event.chat_id)
-    except:
-      pass
-    return await event.respond('__İşlem Başarılı Bir Şekilde Durduruldu ❌.__')
+  if event.is_private:
+    return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
+
+   admins = []
+  async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+    admins.append(admin.id)
+  if not event.sender_id in admins:
+    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
 
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
