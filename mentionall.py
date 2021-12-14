@@ -30,6 +30,12 @@ cumle = ['Üzümlü kekim ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil �
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
+    
+  admins = []
+  async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+    admins.append(admin.id)
+  if not event.sender_id in admins:
+    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
